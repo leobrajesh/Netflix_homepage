@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #000;
+        }
+        .logo {
+            height: 50px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        .user-icon {
+            width: 30px;
+            border-radius: 50%;
+        }
+        .hero {
+            height: 80vh;
+            background: url('https://cdn.pixabay.com/photo/2016/12/17/17/22/netflix-1911349_960_720.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #e50914;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .content-section {
+            padding: 40px;
+            position: relative;
+        }
+        .carousel {
+            display: flex;
+            gap: 10px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .card {
+            min-width: 150px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #000;
+        }
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .carousel-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix Logo" class="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Latest</a></li>
+                <li><a href="#">My List</a></li>
+            </ul>
+        </nav>
+        <div class="user-settings">
+            <img src="https://via.placeholder.com/30" alt="User Profile" class="user-icon">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Watch your favorite shows now</h1>
+            <p>Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</p>
+            <a href="#" class="cta-button">Join Now</a>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>Popular Bollywood Movies</h2>
+        <div class="carousel-controls">
+            <button id="prevBtn">&#10094;</button>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+        <div class="carousel" id="carousel">
+            <div class="card"><img src="https://m.media-amazon.com/images/I/81Ux4Ih0odL._AC_SL1500_.jpg" alt="Kabir Singh"></div>
+            <div class="card"><img src="https://m.media-amazon.com/images/I/91-mO0pMQBL._AC_SL1500_.jpg" alt="3 Idiots"></div>
+            <div class="card"><img src="https://m.media-amazon.com/images/I/71pDXbtyYLL._AC_SL1000_.jpg" alt="Dangal"></div>
+            <div class="card"><img src="https://m.media-amazon.com/images/I/71-DN2MnxHL._AC_SL1032_.jpg" alt="Baahubali"></div>
+            <div class="card"><img src="https://m.media-amazon.com/images/I/91r4fWGI5UL._AC_SL1500_.jpg" alt="PK"></div>
+            <div class="card"><img src="https://m.media-amazon.com/images/I/91XJgyL5KRL._AC_SL1500_.jpg" alt="Sultan"></div>
+            <div class="card"><img src="https://m.media-amazon.com/images/I/81QKr93PVqL._AC_SL1500_.jpg" alt="Padmaavat"></div>
+            <div class="card"><img src="https://m.media-amazon.com/images/I/81h38vXmgcL._AC_SL1500_.jpg" alt="Chhichhore"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Netflix, Inc.</p>
+    </footer>
+
+    <script>
+        const carousel = document.getElementById('carousel');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: 200, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -200, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
